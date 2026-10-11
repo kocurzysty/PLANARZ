@@ -1,0 +1,377 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe6;
+  --paper: #fffdf8;
+  --ink: #2c2a27;
+  --muted: #6b655c;
+  --line: #e4ddd1;
+  --accent: #3d6b66;
+  --accent-ink: #f7fffd;
+  --danger: #8a3b32;
+  --shadow: 0 8px 24px rgba(44, 42, 39, 0.08);
+  font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 10px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+button.primary,
+a.button.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+  border-color: transparent;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.text-button {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  padding: 0.2rem 0.3rem;
+}
+
+.danger-text {
+  color: var(--danger);
+}
+
+.app-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.app-header,
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.app-nav {
+  justify-content: space-around;
+  border-top: 1px solid var(--line);
+  border-bottom: none;
+  position: sticky;
+  bottom: 0;
+}
+
+.app-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+}
+
+.app-nav a.active {
+  background: #e7f0ee;
+  color: var(--accent);
+}
+
+.brand {
+  margin: 0;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.app-main {
+  padding: 1rem;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.view-header {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.date-nav h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.field {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.field.compact span,
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hint.compact {
+  margin: 0 0 0.35rem 2.4rem;
+}
+
+.variant-row {
+  display: flex;
+  align-items: end;
+  gap: 0.75rem;
+}
+
+.add-task {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  margin: 0.4rem 0;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem;
+  background: white;
+}
+
+.task-list ul,
+.subtask-list,
+.variant-editor,
+.month-task-preview,
+.week-day-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-card,
+.week-day {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.7rem;
+  margin: 0.55rem 0;
+  box-shadow: var(--shadow);
+}
+
+.task-main,
+.week-task {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.task-title {
+  border: none;
+  background: transparent;
+  text-align: left;
+  flex: 1;
+  padding: 0.15rem 0;
+}
+
+.completed,
+.completed .task-title,
+li.completed {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.drag-handle {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: grab;
+  padding: 0.15rem;
+}
+
+.drag-handle.spacer {
+  width: 1.4rem;
+}
+
+.subtask-list {
+  padding-left: 2.3rem;
+}
+
+.subtask-list label {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0.2rem 0;
+}
+
+.empty {
+  color: var(--muted);
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+}
+
+.banner-error {
+  background: #f8e4e1;
+  color: var(--danger);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 42, 39, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  z-index: 20;
+}
+
+.modal {
+  background: var(--paper);
+  border-radius: 16px;
+  padding: 1rem;
+  width: min(100%, 420px);
+  max-height: 90dvh;
+  overflow: auto;
+  box-shadow: var(--shadow);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.variant-editor li {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.variant-editor input {
+  flex: 1;
+}
+
+.week-day-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  background: transparent;
+  padding: 0.2rem 0;
+}
+
+.week-day.drop-target {
+  outline: 2px solid var(--accent);
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.35rem;
+}
+
+.month-weekday,
+.month-day {
+  text-align: center;
+  min-height: 3rem;
+}
+
+.month-day {
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: var(--paper);
+}
+
+.month-day.outside {
+  opacity: 0.45;
+}
+
+.month-day.today {
+  outline: 2px solid var(--accent);
+}
+
+.dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  bottom: 0.35rem;
+}
+
+.compact-button {
+  padding: 0.35rem 0.7rem;
+}
+
+.add-more {
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .app-main {
+    padding: 0.75rem;
+  }
+
+  .task-main .text-button,
+  .week-task .text-button {
+    font-size: 0.85rem;
+  }
+}
